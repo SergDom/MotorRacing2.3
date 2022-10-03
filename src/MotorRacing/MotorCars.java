@@ -22,4 +22,20 @@ public class MotorCars extends Cars implements Competing{
         return "Машина: " + super.toString();
 
     }
+
+    @Override
+    public void pitstop() {
+
+    }
+
+    @Override
+    public double lapTime() {
+        return double;
+    }
+
+    @Override
+    public double maxSpeed(double speed) {
+        return System.out.println("Максимальная скорость " + speed);
+
+    }
 }
