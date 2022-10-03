@@ -56,6 +56,6 @@ public abstract class Cars {
 
     @Override
     public String toString() {
-        return "Марка: " + brand + "Модель: " + model + "Объем двигателя: " + engine; }
+        return "Марка: " + brand + "Модель: " + model + "Объем двигателя: " + engine + " литра."; }
 
     }
