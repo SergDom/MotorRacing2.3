@@ -1,6 +1,6 @@
 package MotorRacing;
 
-public class MotorCars extends Cars{
+public class MotorCars extends Cars implements Competing{
 
     public MotorCars(String brand, String model, double engine) {
         super(brand, model, engine);
