@@ -22,7 +22,23 @@ public class Buses extends Cars implements Competing{
         return "Автобус: " + super.toString();
     }
 
+    @Override
+    public void pitStop() {
+        System.out.println("Заехать в боксы");
+        System.out.println("Заправить автобус и сменить резину");
+    }
 
+    @Override
+    public String lapTime(String time) {
+        System.out.println("Скорость круга автобуса");
+        return time;
+    }
+
+    @Override
+    public double maxSpeed (double speed) {
+        System.out.println("Максимальная скорость автобуса");
+        return speed;
+    }
 
 
 }

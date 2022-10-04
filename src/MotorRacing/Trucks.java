@@ -21,4 +21,23 @@ public class Trucks extends Cars implements Competing{
     public String toString() {
         return "Грузовик: " + super.toString();
     }
+
+
+    @Override
+    public void pitStop() {
+        System.out.println("Заехать в боксы");
+        System.out.println("Заправить грузовик и сменить резину");
+    }
+
+    @Override
+    public String lapTime(String time) {
+        System.out.println("Скорость круга грузовика");
+        return time;
+    }
+
+    @Override
+    public double maxSpeed (double speed) {
+        System.out.println("Максимальная скорость грузовика");
+        return speed;
+    }
 }

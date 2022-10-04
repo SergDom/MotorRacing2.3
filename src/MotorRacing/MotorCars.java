@@ -8,7 +8,7 @@ public class MotorCars extends Cars implements Competing{
 
     @Override
     public void start() {
-            System.out.println("Вствить ключ в замок зажигания и завести двигатель");
+            System.out.println("Вставить ключ в замок зажигания и двигатель");
     }
 
     @Override
@@ -26,16 +26,18 @@ public class MotorCars extends Cars implements Competing{
     @Override
     public void pitStop() {
         System.out.println("Заехать в боксы");
+        System.out.println("Заправить машину и сменить резину");
     }
 
     @Override
-    public String lapTime() {
-        String time = "";
-       return System.out.println("Скорость круга " + time);
+    public String lapTime(String time) {
+        System.out.println("Скорость круга машины");
+        return time;
     }
 
     @Override
-    public void maxSpeed(double speed) {
-        System.out.println("Максимальная скорость " + speed);
+    public double maxSpeed (double speed) {
+        System.out.println("Максимальная скорость машины");
+        return speed;
     }
 }

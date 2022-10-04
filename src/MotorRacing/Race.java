@@ -8,6 +8,10 @@ public class Race {
         MotorCars car3 = new MotorCars("Mazda","RX-7",1.3);
         MotorCars car4 = new MotorCars("Toyota","Supra",2.0);
 
+        car1.lapTime("1.25");
+        car1.maxSpeed(200);
+        car1.pitStop();
+
         Trucks truck1 = new Trucks("KAMAZ","4326-9",17);
         Trucks truck2 = new Trucks("Tatra","Phoenix",12.5);
         Trucks truck3 = new Trucks("Renault","Phoenix",14.5);
