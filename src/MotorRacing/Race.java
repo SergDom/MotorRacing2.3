@@ -23,6 +23,8 @@ public class Race {
         Buses bus3 = new Buses("Göppel", "Extra Grand", 9.3);
         Buses bus4 = new Buses("MAZ", "215", 8.2);
 
+        Driver <MotorCars> Alex = new Driver<>("Alex", "B", 5);
 
+        System.out.println(Alex);
     }
 }

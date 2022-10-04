@@ -1,6 +1,6 @@
 package MotorRacing;
 
-public class Driver {
+public class Driver<M extends MotorCars> {
     final private String name;
     private String typeOfLicence;
     private double experience;
@@ -9,14 +9,21 @@ public class Driver {
         if (name == null || name.isEmpty()) {
             throw new NullPointerException ("Нет прав, иди в автошколу");
         } else {
-            this.name = typeOfLicence;
+            this.name = name;
         }
-
         setTypeOfLicence(typeOfLicence);
         setExperience(experience);
     }
 
+    public void startMove(){
 
+    }
+    public void finishMove(){
+
+    }
+    public void fillVehicle(){
+
+    }
     public String getTypeOfLicence() {
         return typeOfLicence;
     }
@@ -32,6 +39,11 @@ public class Driver {
     public double getExperience() {
         return experience;
     }
+
+    public String getName() {
+        return name;
+    }
+
     public void setExperience(double experience) {
         if (experience < 0) {
             this.experience = 0;
@@ -40,5 +52,10 @@ public class Driver {
             this.experience = experience;
         }
 
+    }
+
+    @Override
+    public String toString() {
+        return "Водитель: " + name + "Категория прав: " + typeOfLicence + "Опыт: " + experience;
     }
 }
