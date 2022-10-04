@@ -1,7 +1,7 @@
 package MotorRacing;
 
 public interface Competing {
-    void pitstop();
-    double lapTime();
+    void pitStop();
+    String lapTime();
     double maxSpeed();
 }

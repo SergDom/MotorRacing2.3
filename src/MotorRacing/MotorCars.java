@@ -24,18 +24,18 @@ public class MotorCars extends Cars implements Competing{
     }
 
     @Override
-    public void pitstop() {
-
+    public void pitStop() {
+        System.out.println("Заехать в боксы");
     }
 
     @Override
-    public double lapTime() {
-        return double;
+    public String lapTime() {
+        String time = "";
+       return System.out.println("Скорость круга " + time);
     }
 
     @Override
-    public double maxSpeed(double speed) {
-        return System.out.println("Максимальная скорость " + speed);
-
+    public void maxSpeed(double speed) {
+        System.out.println("Максимальная скорость " + speed);
     }
 }
