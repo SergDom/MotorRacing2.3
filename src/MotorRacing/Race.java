@@ -8,9 +8,6 @@ public class Race {
         MotorCars car3 = new MotorCars("Mazda","RX-7",1.3);
         MotorCars car4 = new MotorCars("Toyota","Supra",2.0);
 
-        car1.lapTime();
-        car1.maxSpeed();
-        car1.pitStop();
 
         Trucks truck1 = new Trucks("KAMAZ","4326-9",17);
         Trucks truck2 = new Trucks("Tatra","Phoenix",12.5);
@@ -23,8 +20,21 @@ public class Race {
         Buses bus3 = new Buses("Göppel", "Extra Grand", 9.3);
         Buses bus4 = new Buses("MAZ", "215", 8.2);
 
-//        Driver <MotorCars> Alex = new Driver<>("Alex", "B", 5);
+        DriverB Alex = new DriverB("Alex", 'B',10);
+        DriverC Vasiliy = new DriverC("Vasiliy", 'C',2);
+        DriverD Ivan = new DriverD("Ivan", 'D',7);
 
-//        System.out.println(Alex);
+
+        System.out.println(Alex);
+        Alex.DriverInfo(car1);
+
+        System.out.println(Vasiliy);
+        Vasiliy.DriverInfo(truck3);
+
+        System.out.println(Ivan);
+        Ivan.DriverInfo(bus3);
+
+
+
     }
 }

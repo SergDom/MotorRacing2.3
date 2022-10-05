@@ -40,14 +40,10 @@ public abstract class Cars {
         return engine;
     }
 
-
     public abstract void start();
 
     public abstract void finish();
 
-    @Override
-    public String toString() {
-        return "Марка: " + brand + "Модель: " + model + "Объем двигателя: " + engine + " литра.";
-    }
+
 
 }

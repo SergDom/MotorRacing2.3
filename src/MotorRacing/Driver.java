@@ -1,7 +1,7 @@
 package MotorRacing;
 
 
-public class Driver<M extends Cars> {
+abstract public class Driver <T extends Cars & Competing> {
     final private String name;
     final private Character typeOfLicence;
     private double experience;
@@ -21,14 +21,14 @@ public class Driver<M extends Cars> {
         setExperience(experience);
     }
 
-    public void startMove(){
-        System.out.println(name + " Заводит ");
+    public void startMove(T Cars){
+        System.out.println(name + " Заводит " + Cars.getBrand() + " " + Cars.getModel());
     }
-    public void finishMove(){
-
+    public void finishMove(T Cars){
+        System.out.println(name + " Останавиливает " + Cars.getBrand() + " " + Cars.getModel());
     }
-    public void fillVehicle(){
-
+    public void fillVehicle(T Cars){
+        System.out.println(name + " Заправляет " + Cars.getBrand() + " " + Cars.getModel());
     }
     public Character getTypeOfLicence() {
 
@@ -47,17 +47,20 @@ public class Driver<M extends Cars> {
     }
 
     public void setExperience(double experience) {
-        if (experience < 0) {
-            this.experience = 0;
-            System.out.println("Нет опыта вождения");
+        if (experience <= 0) {
+            throw new NullPointerException ("Иди учись водить!");
         } else {
             this.experience = experience;
         }
 
     }
 
-    @Override
+
+    public void DriverInfo (T Cars) {
+        System.out.println("Водитель " + name + " управляет " + Cars.getBrand() + " " + Cars.getModel() + " и будет участвовать в заезде");
+    }
+        @Override
     public String toString() {
-        return "Водитель: " + name + " Категория прав: " + typeOfLicence + " Опыт: " + experience;
+        return "Имя водителя: " + name + " Категория прав: " + typeOfLicence + " Опыт вождения: " + experience;
     }
 }
