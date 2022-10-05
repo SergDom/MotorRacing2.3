@@ -3,6 +3,7 @@ package MotorRacing;
 public class Buses extends Cars implements Competing{
 
     public Buses(String brand, String model, double engine) {
+
         super(brand, model, engine);
     }
 
@@ -29,15 +30,13 @@ public class Buses extends Cars implements Competing{
     }
 
     @Override
-    public String lapTime(String time) {
-        System.out.println("Скорость круга автобуса");
-        return time;
+    public void lapTime() {
+        System.out.println("Скорость круга у автобуса");
     }
-
     @Override
-    public double maxSpeed (double speed) {
-        System.out.println("Максимальная скорость автобуса");
-        return speed;
+    public void maxSpeed () {
+        System.out.println("Максимальная скорость у автобуса");
+
     }
 
 

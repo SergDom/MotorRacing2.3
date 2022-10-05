@@ -1,22 +1,28 @@
 package MotorRacing;
 
-public class Driver<M extends MotorCars> {
+
+public class Driver<M extends Cars> {
     final private String name;
-    private String typeOfLicence;
+    final private Character typeOfLicence;
     private double experience;
 
-    public Driver(String name, String typeOfLicence, double experience) {
+    public Driver (String name, Character typeOfLicence, double experience) {
         if (name == null || name.isEmpty()) {
-            throw new NullPointerException ("Нет прав, иди в автошколу");
+            throw new NullPointerException ("Укажите имя водителя");
         } else {
             this.name = name;
         }
-        setTypeOfLicence(typeOfLicence);
+
+        if (typeOfLicence != 'B' && typeOfLicence != 'C' && typeOfLicence != 'D') {
+            throw new NullPointerException ("Нет прав, иди в автошколу");
+        } else {
+            this.typeOfLicence = typeOfLicence;
+        }
         setExperience(experience);
     }
 
     public void startMove(){
-
+        System.out.println(name + " Заводит ");
     }
     public void finishMove(){
 
@@ -24,23 +30,19 @@ public class Driver<M extends MotorCars> {
     public void fillVehicle(){
 
     }
-    public String getTypeOfLicence() {
+    public Character getTypeOfLicence() {
+
         return typeOfLicence;
     }
 
-    public void setTypeOfLicence(String typeOfLicence) {
-        if (typeOfLicence == null || typeOfLicence.isEmpty()) {
-            this.typeOfLicence = "Нет прав, иди в автошколу";
-        } else {
-            this.typeOfLicence = typeOfLicence;
-        }
 
-    }
     public double getExperience() {
+
         return experience;
     }
 
     public String getName() {
+
         return name;
     }
 
@@ -56,6 +58,6 @@ public class Driver<M extends MotorCars> {
 
     @Override
     public String toString() {
-        return "Водитель: " + name + "Категория прав: " + typeOfLicence + "Опыт: " + experience;
+        return "Водитель: " + name + " Категория прав: " + typeOfLicence + " Опыт: " + experience;
     }
 }

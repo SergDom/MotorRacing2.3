@@ -4,20 +4,25 @@ public abstract class Cars {
 
     final private String brand;
     final private String model;
-    private double engine;
+    final private double engine;
 
     public Cars(String brand, String model, double engine) {
         if (brand == null || brand.isEmpty()) {
-            this.brand = "default";
+            this.brand = "Укажите бренд";
         } else {
             this.brand = brand;
         }
         if (model == null || model.isEmpty()) {
-            this.model = "default";
+            this.model = "Укажите марку";
         } else {
             this.model = model;
         }
-        setEngine(engine);
+        if (engine < 0) {
+            this.engine = 0;
+            System.out.println("Укажите обЪем двигателя");
+        } else {
+            this.engine = engine;
+        }
     }
 
     public String getBrand() {
@@ -35,14 +40,6 @@ public abstract class Cars {
         return engine;
     }
 
-    public void setEngine(double engine) {
-        if (engine < 0) {
-            this.engine = 0;
-            System.out.println("Укажите обЪем двигателя");
-        } else {
-            this.engine = engine;
-        }
-    }
 
     public abstract void start();
 
