@@ -8,11 +8,22 @@ public class Buses extends Transport implements Competing {
     }
 
     enum SeatCapacity {
-        EXTRASMALL,
-        SMALL,
-        MIDDLE,
-        LARGE,
-        EXTRALARGE
+        EXTRASMALL("до 10 мест"),
+        SMALL("до 25 мест"),
+        MIDDLE("40-50 мест"),
+        LARGE("до 60-80 мест"),
+        EXTRALARGE("100-120 мест");
+
+
+        private String textSeats;
+
+        public String getTextSeats() {
+            return textSeats;
+        }
+
+        SeatCapacity(String textSeats) {
+            this.textSeats =textSeats;
+        }
     }
 
     @Override

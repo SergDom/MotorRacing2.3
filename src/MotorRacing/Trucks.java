@@ -8,10 +8,14 @@ public class Trucks extends Transport implements Competing{
     }
 
     enum LoadCapacity {
-        N1,
-        N2,
-        N3
+        N1("с полной массой до 3,5 тонн"),
+        N2("с полной массой свыше 3,5 до 12 тонн"),
+        N3("с полной массой свыше 12 тонн");
 
+        private String textCapacity;
+        LoadCapacity(String textCapacity) {
+            this.textCapacity = textCapacity;
+        }
     }
     @Override
     public void start() {

@@ -8,16 +8,25 @@ public class MotorCars extends Transport implements Competing{
     }
 
     enum BodyType {
-        SEDAN,
-        HATCHBACK,
-        COUPE,
-        WAGON,
-        OFFROAD,
-        SUV,
-        PICKUP,
-        VAN,
-        MINIVAN
+        SEDAN("Седан"),
+        HATCHBACK("Хетчбек"),
+        COUPE("Купе"),
+        WAGON("Универсал"),
+        OFFROAD("Внедорожник"),
+        SUV("Кроссовер"),
+        PICKUP("Пикап"),
+        VAN("Фургон"),
+        MINIVAN ("Минивэн");
 
+        private String textType;
+
+        public String getTextType() {
+            return textType;
+        }
+
+        BodyType(String textType) {
+            this.textType =textType;
+        }
     }
     @Override
     public void start() {
