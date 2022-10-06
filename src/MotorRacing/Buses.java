@@ -1,6 +1,6 @@
 package MotorRacing;
 
-public class Buses extends Cars implements Competing{
+public class Buses extends Transport implements Competing{
 
     public Buses(String brand, String model, double engine) {
 

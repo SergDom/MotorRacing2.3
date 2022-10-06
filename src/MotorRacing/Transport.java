@@ -1,12 +1,12 @@
 package MotorRacing;
 
-public abstract class Cars {
+public abstract class Transport {
 
     final private String brand;
     final private String model;
     final private double engine;
 
-    public Cars(String brand, String model, double engine) {
+    public Transport(String brand, String model, double engine) {
         if (brand == null || brand.isEmpty()) {
             this.brand = "Укажите бренд";
         } else {

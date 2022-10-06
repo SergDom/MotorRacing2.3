@@ -1,7 +1,7 @@
 package MotorRacing;
 
 
-abstract public class Driver <T extends Cars & Competing> {
+abstract public class Driver <T extends Transport & Competing> {
     final private String name;
     final private Character typeOfLicence;
     private double experience;
