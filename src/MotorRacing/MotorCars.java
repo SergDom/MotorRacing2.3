@@ -20,6 +20,24 @@ public class MotorCars extends Transport implements Competing{
 
         private String textType;
 
+
+
+        public static BodyType TypeDefinition (String textType){
+            for (BodyType definition : values()) {
+                if (definition.getTextType().equals(textType)) {
+                    return definition;
+                }
+            }
+            return null;
+        }
+
+        public void setTextType(String textType) {
+            if (textType == null || textType.isBlank()){
+            this.textType = "Нет данных";}
+            else {
+                this.textType = textType;
+            }
+        }
         public String getTextType() {
             return textType;
         }
