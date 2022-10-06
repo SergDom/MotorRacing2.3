@@ -1,10 +1,18 @@
 package MotorRacing;
 
-public class Buses extends Transport implements Competing{
+public class Buses extends Transport implements Competing {
 
     public Buses(String brand, String model, double engine) {
 
         super(brand, model, engine);
+    }
+
+    enum SeatCapacity {
+        EXTRASMALL,
+        SMALL,
+        MIDDLE,
+        LARGE,
+        EXTRALARGE
     }
 
     @Override
@@ -33,8 +41,9 @@ public class Buses extends Transport implements Competing{
     public void lapTime() {
         System.out.println("Скорость круга у автобуса");
     }
+
     @Override
-    public void maxSpeed () {
+    public void maxSpeed() {
         System.out.println("Максимальная скорость у автобуса");
 
     }

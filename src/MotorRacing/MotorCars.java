@@ -7,6 +7,18 @@ public class MotorCars extends Transport implements Competing{
         super(brand, model, engine);
     }
 
+    enum BodyType {
+        SEDAN,
+        HATCHBACK,
+        COUPE,
+        WAGON,
+        OFFROAD,
+        SUV,
+        PICKUP,
+        VAN,
+        MINIVAN
+
+    }
     @Override
     public void start() {
             System.out.println("Вставить ключ в замок зажигания и двигатель");

@@ -7,6 +7,12 @@ public class Trucks extends Transport implements Competing{
         super(brand, model, engine);
     }
 
+    enum LoadCapacity {
+        N1,
+        N2,
+        N3
+
+    }
     @Override
     public void start() {
         System.out.println("Запрыгнуть в кабину и завести двигатель");
