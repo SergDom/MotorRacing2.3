@@ -3,8 +3,8 @@ package MotorRacing;
 public class MotorCars extends Transport implements Competing{
 
     public MotorCars(String brand, String model, double engine) {
-
         super(brand, model, engine);
+
     }
 
     enum BodyType {
@@ -46,9 +46,12 @@ public class MotorCars extends Transport implements Competing{
             this.textType =textType;
         }
     }
+    public void Carinfo(){
+        System.out.println(super.toString() + " тип авто ");
+    }
     @Override
     public void start() {
-            System.out.println("Вставить ключ в замок зажигания и двигатель");
+            System.out.println("Вставить ключ в замок зажигания и завести двигатель");
     }
 
     @Override

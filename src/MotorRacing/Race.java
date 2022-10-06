@@ -34,6 +34,7 @@ public class Race {
         System.out.println(Ivan);
         Ivan.DriverInfo(bus3);
 
+        System.out.println(car1);
 
 
     }
