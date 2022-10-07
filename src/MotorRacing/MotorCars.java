@@ -1,13 +1,17 @@
 package MotorRacing;
 
-public class MotorCars extends Transport implements Competing{
+public class MotorCars extends Transport implements Competing {
 
-    public MotorCars(String brand, String model, double engine) {
+    private BodyType bodyType;
+
+    public MotorCars(String brand, String model, double engine, String bodyType) {
         super(brand, model, engine);
+        setBodyType(bodyType);
+
 
     }
 
-    enum BodyType {
+    public enum BodyType {
         SEDAN("Седан"),
         HATCHBACK("Хетчбек"),
         COUPE("Купе"),
@@ -16,42 +20,77 @@ public class MotorCars extends Transport implements Competing{
         SUV("Кроссовер"),
         PICKUP("Пикап"),
         VAN("Фургон"),
-        MINIVAN ("Минивэн");
+        MINIVAN("Минивэн");
 
-        private String textType;
+        private final String textType;
 
-
-
-        public static BodyType TypeDefinition (String textType){
-            for (BodyType definition : values()) {
-                if (definition.getTextType().equals(textType)) {
-                    return definition;
-                }
-            }
-            return null;
+        BodyType(String textType) {
+            this.textType = textType;
         }
 
-        public void setTextType(String textType) {
-            if (textType == null || textType.isBlank()){
-            this.textType = "Нет данных";}
-            else {
-                this.textType = textType;
-            }
-        }
         public String getTextType() {
             return textType;
         }
 
-        BodyType(String textType) {
-            this.textType =textType;
+        //        public static BodyType TypeDefinition (String textType){
+//            for (BodyType definition : values()) {
+//                if (definition.getTextType().equals(textType)) {
+//                    return definition;
+//                }
+//            }
+//            return null;
+//        }
+
+    }
+    public void Carinfo() {
+        System.out.println( "Это тип авто " + bodyType.getTextType());
+    }
+    public void setBodyType(String bodyType) {
+        if (bodyType == null || bodyType.isEmpty())
+            this.bodyType = null;
+        else {
+            switch (bodyType) {
+                case "Седан":
+                    this.bodyType = BodyType.SEDAN;
+                    break;
+                case "Хетчбек":
+                    this.bodyType = BodyType.HATCHBACK;
+                    break;
+                case "Купе":
+                    this.bodyType = BodyType.COUPE;
+                    break;
+                case "Универсал":
+                    this.bodyType = BodyType.WAGON;
+                    break;
+                case "Внедорожник":
+                    this.bodyType = BodyType.OFFROAD;
+                    break;
+                case "Пикап":
+                    this.bodyType = BodyType.PICKUP;
+                    break;
+                case "Кроссовер":
+                    this.bodyType = BodyType.SUV;
+                    break;
+                case "Фургон":
+                    this.bodyType = BodyType.VAN;
+                    break;
+                case "Минивэн":
+                    this.bodyType = BodyType.MINIVAN;
+                    break;
+                default:
+                    this.bodyType = null;
+            }
         }
     }
-    public void Carinfo(){
-        System.out.println(super.toString() + " тип авто ");
+
+    public BodyType getBodyType() {
+        return bodyType;
     }
+
+
     @Override
     public void start() {
-            System.out.println("Вставить ключ в замок зажигания и завести двигатель");
+        System.out.println("Вставить ключ в замок зажигания и завести двигатель");
     }
 
     @Override
@@ -62,7 +101,7 @@ public class MotorCars extends Transport implements Competing{
 
     @Override
     public String toString() {
-        return "Машина: " + super.toString();
+        return "Машина: " + super.toString() + " тип кузова " + bodyType.getTextType();
 
     }
 
@@ -78,7 +117,7 @@ public class MotorCars extends Transport implements Competing{
     }
 
     @Override
-    public void maxSpeed () {
+    public void maxSpeed() {
         System.out.println("Максимальная скорость у машины");
 
     }

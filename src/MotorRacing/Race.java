@@ -3,10 +3,10 @@ package MotorRacing;
 public class Race {
     public static void main(String[] args) {
 
-        MotorCars car1 = new MotorCars("Lada","2109",1.7);
-        MotorCars car2 = new MotorCars("Ford","Mustang",3.5);
-        MotorCars car3 = new MotorCars("Mazda","RX-7",1.3);
-        MotorCars car4 = new MotorCars("Toyota","Supra",2.0);
+        MotorCars car1 = new MotorCars("Lada","2109",1.7, "Cедан");
+        MotorCars car2 = new MotorCars("Ford","Mustang",3.5, "Хэтчбек");
+        MotorCars car3 = new MotorCars("Mazda","RX-7",1.3, "Купе");
+        MotorCars car4 = new MotorCars("Toyota","Supra",2.0, "Универсал");
 
 
         Trucks truck1 = new Trucks("KAMAZ","4326-9",17);
@@ -34,7 +34,7 @@ public class Race {
         System.out.println(Ivan);
         Ivan.DriverInfo(bus3);
 
-        System.out.println(car1);
+
 
 
     }
