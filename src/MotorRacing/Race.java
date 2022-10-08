@@ -6,7 +6,7 @@ public class Race {
         MotorCars car1 = new MotorCars("Lada", "2109", 1.7, "Седан");
         MotorCars car2 = new MotorCars("Ford", "Mustang", 3.5, "Хэтчбек");
         MotorCars car3 = new MotorCars("Mazda", "RX-7", 1.3, "Купе");
-        MotorCars car4 = new MotorCars("Toyota", "Supra", 2.0, null);
+        MotorCars car4 = new MotorCars("Toyota", "Supra", 2.0, "Универсал");
 
 
         Trucks truck1 = new Trucks("KAMAZ", "4326-9", 17);
