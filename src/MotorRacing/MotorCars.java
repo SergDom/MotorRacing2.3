@@ -2,14 +2,6 @@ package MotorRacing;
 
 public class MotorCars extends Transport implements Competing {
 
-    private BodyType bodyType;
-
-    public MotorCars(String brand, String model, double engine, String bodyType) {
-        super(brand, model, engine);
-        setBodyType(bodyType);
-
-
-    }
 
     public enum BodyType {
         SEDAN("Седан"),
@@ -25,14 +17,18 @@ public class MotorCars extends Transport implements Competing {
         private final String textType;
 
         BodyType(String textType) {
+
             this.textType = textType;
         }
 
         public String getTextType() {
             return textType;
         }
+    }
 
-        //        public static BodyType TypeDefinition (String textType){
+    private BodyType bodyType;
+
+    //        public static BodyType TypeDefinition (String textType){
 //            for (BodyType definition : values()) {
 //                if (definition.getTextType().equals(textType)) {
 //                    return definition;
@@ -41,9 +37,17 @@ public class MotorCars extends Transport implements Competing {
 //            return null;
 //        }
 
+
+
+    public MotorCars(String brand, String model, double engine, String bodyType) {
+        super(brand, model, engine);
+        setBodyType(bodyType);
+
     }
-    public void Carinfo() {
-        System.out.println( "Это тип авто " + bodyType.getTextType());
+
+    public BodyType getBodyType() {
+
+        return bodyType;
     }
     public void setBodyType(String bodyType) {
         if (bodyType == null || bodyType.isEmpty())
@@ -83,10 +87,6 @@ public class MotorCars extends Transport implements Competing {
         }
     }
 
-    public BodyType getBodyType() {
-        return bodyType;
-    }
-
 
     @Override
     public void start() {
@@ -99,10 +99,14 @@ public class MotorCars extends Transport implements Competing {
 
     }
 
-    @Override
-    public String toString() {
-        return "Машина: " + super.toString() + " тип кузова " + bodyType.getTextType();
 
+    public void CarInfo() {
+        if (bodyType == null) {
+            System.out.println("Тип не указан");
+        } else {
+            System.out.println( getBrand() + " " + getModel() + " - тип кузова " + bodyType.getTextType());
+
+        }
     }
 
     @Override
