@@ -28,16 +28,6 @@ public class MotorCars extends Transport implements Competing {
 
     private BodyType bodyType;
 
-    //        public static BodyType TypeDefinition (String textType){
-//            for (BodyType definition : values()) {
-//                if (definition.getTextType().equals(textType)) {
-//                    return definition;
-//                }
-//            }
-//            return null;
-//        }
-
-
 
     public MotorCars(String brand, String model, double engine, String bodyType) {
         super(brand, model, engine);
