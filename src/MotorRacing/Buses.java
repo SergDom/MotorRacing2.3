@@ -54,6 +54,7 @@ public class Buses extends Transport implements Competing {
                         this.seatCapacity = null;
                 }
             }
+
         }
         public void BusesInfo () {
             if (seatCapacity == null) {
