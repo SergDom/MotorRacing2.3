@@ -44,6 +44,9 @@ public abstract class Transport {
 
     public abstract void finish();
 
-
-
+    @Override
+    public String toString() {
+        return brand + " " + model + " " + engine;
+    }
 }
+

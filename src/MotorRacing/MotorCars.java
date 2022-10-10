@@ -1,15 +1,86 @@
 package MotorRacing;
 
-public class MotorCars extends Transport implements Competing{
+public class MotorCars extends Transport implements Competing {
 
-    public MotorCars(String brand, String model, double engine) {
 
-        super(brand, model, engine);
+    public enum BodyType {
+        SEDAN("Седан"),
+        HATCHBACK("Хетчбек"),
+        COUPE("Купе"),
+        WAGON("Универсал"),
+        OFFROAD("Внедорожник"),
+        SUV("Кроссовер"),
+        PICKUP("Пикап"),
+        VAN("Фургон"),
+        MINIVAN("Минивэн");
+
+        private final String textType;
+
+        BodyType(String textType) {
+
+            this.textType = textType;
+        }
+
+        public String getTextType() {
+            return textType;
+        }
     }
+
+    private BodyType bodyType;
+
+
+    public MotorCars(String brand, String model, double engine, String bodyType) {
+        super(brand, model, engine);
+        setBodyType(bodyType);
+
+    }
+
+    public BodyType getBodyType() {
+
+        return bodyType;
+    }
+    public void setBodyType(String bodyType) {
+        if (bodyType == null || bodyType.isEmpty())
+            this.bodyType = null;
+        else {
+            switch (bodyType) {
+                case "Седан":
+                    this.bodyType = BodyType.SEDAN;
+                    break;
+                case "Хетчбек":
+                    this.bodyType = BodyType.HATCHBACK;
+                    break;
+                case "Купе":
+                    this.bodyType = BodyType.COUPE;
+                    break;
+                case "Универсал":
+                    this.bodyType = BodyType.WAGON;
+                    break;
+                case "Внедорожник":
+                    this.bodyType = BodyType.OFFROAD;
+                    break;
+                case "Пикап":
+                    this.bodyType = BodyType.PICKUP;
+                    break;
+                case "Кроссовер":
+                    this.bodyType = BodyType.SUV;
+                    break;
+                case "Фургон":
+                    this.bodyType = BodyType.VAN;
+                    break;
+                case "Минивэн":
+                    this.bodyType = BodyType.MINIVAN;
+                    break;
+                default:
+                    this.bodyType = null;
+            }
+        }
+    }
+
 
     @Override
     public void start() {
-            System.out.println("Вставить ключ в замок зажигания и двигатель");
+        System.out.println("Вставить ключ в замок зажигания и завести двигатель");
     }
 
     @Override
@@ -18,10 +89,14 @@ public class MotorCars extends Transport implements Competing{
 
     }
 
-    @Override
-    public String toString() {
-        return "Машина: " + super.toString();
 
+    public void CarInfo() {
+        if (bodyType == null) {
+            System.out.println("Тип не указан");
+        } else {
+            System.out.println( getBrand() + " " + getModel() + " - тип кузова " + bodyType.getTextType());
+
+        }
     }
 
     @Override
@@ -36,7 +111,7 @@ public class MotorCars extends Transport implements Competing{
     }
 
     @Override
-    public void maxSpeed () {
+    public void maxSpeed() {
         System.out.println("Максимальная скорость у машины");
 
     }
