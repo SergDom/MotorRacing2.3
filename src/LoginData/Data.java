@@ -35,9 +35,7 @@ public class Data {
 
         loginInfo("Sergey", "12345qwerty", "12345qwerty%");
 
-
     }
-
 }
 
 
