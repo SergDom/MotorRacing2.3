@@ -23,27 +23,26 @@ public class Data {
     return result;
 
 
-//        p.equals(pC);
+
     }
+
+    static boolean loginChecking (String login) throws WrongLoginException {
+        if (login.matches("^\\w{1,20}")) {
+            return true;
+        } else{ throw new WrongLoginException("Неправильно задан Login!");
+            }
+        }
+
 
 
 
     public static void main(String[] args) {
-        Data.loginInfo("Sergey", "123qwerty", "123qwerty-----");
+//        Data.loginInfo("Sergey", "123qwerty", "123qwerty-----");
 
 
 
     }
-//}
-//
-//public class loginException extends Exception {
-//
-//    public WrongLoginException (String) {
-//        super();
-//    }
-//    public WrongPasswordException (String, String) {
-//
-//    }
+
 }
 
 
