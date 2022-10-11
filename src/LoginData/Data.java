@@ -3,42 +3,37 @@ package LoginData;
 public class Data {
 
 
-    public static String loginInfo(String Login, String password, String confirmPassword) {
-        String l = new String();
-        String p = new String();
-        String pC = new String();
+    public static boolean loginInfo(String login, String password, String confirmPassword) {
 
-        l.matches("^\\w{1,20}");
-        p.matches("^\\w{1,20}");
-        pC.matches("^\\w{1,20}");
-
-        String result = "Login " + l + " password " + p + " password confirmation " + pC;
-
-//        try {
-//            loginInfo(Login,password,confirmPassword);
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-
-    return result;
-
-
+        try {
+            return (loginChecking(login) && passwordChecking(password, confirmPassword));
+        } catch (WrongLoginException | WrongPasswordException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
 
     }
 
-    static boolean loginChecking (String login) throws WrongLoginException {
+    static boolean loginChecking(String login) throws WrongLoginException {
         if (login.matches("^\\w{1,20}")) {
             return true;
-        } else{ throw new WrongLoginException("Неправильно задан Login!");
-            }
+        } else {
+            throw new WrongLoginException("Неправильно задан Login!");
         }
+    }
 
-
+    static boolean passwordChecking(String password, String confirmPassword) throws WrongPasswordException {
+        if (password.matches("^\\w{1,20}") && password.equals(confirmPassword)) {
+            return true;
+        } else {
+            throw new WrongPasswordException("Неправильно задан пароль!");
+        }
+    }
 
 
     public static void main(String[] args) {
-//        Data.loginInfo("Sergey", "123qwerty", "123qwerty-----");
 
+        loginInfo("Sergey", "12345qwerty", "12345qwerty%");
 
 
     }
