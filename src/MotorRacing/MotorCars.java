@@ -89,6 +89,11 @@ public class MotorCars extends Transport implements Competing {
 
     }
 
+    @Override
+    public boolean vehicleInspection() {
+        return (int) (Math.random() * 10) != 10 && (int) (Math.random() * 10) != 15;
+    }
+
 
     public void CarInfo() {
         if (bodyType == null) {

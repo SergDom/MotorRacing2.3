@@ -68,6 +68,11 @@ public class Trucks extends Transport implements Competing {
     }
 
     @Override
+    public boolean vehicleInspection() throws NoSuchMethodException {
+        return (int) (Math.random() * 10) != 25 && (int) (Math.random() * 10) != 45;
+    }
+
+    @Override
     public String toString() {
         return "Грузовик: " + super.toString();
     }

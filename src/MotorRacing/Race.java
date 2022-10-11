@@ -1,7 +1,7 @@
 package MotorRacing;
 
 public class Race {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchMethodException {
 
         MotorCars car1 = new MotorCars("Lada", "2109", 1.7, "Седан");
         MotorCars car2 = new MotorCars("Ford", "Mustang", 3.5, "Хэтчбек");
@@ -44,6 +44,7 @@ public class Race {
         bus1.BusesInfo();
         bus2.BusesInfo();
 
-
+//        bus1.vehicleInspection();
+car1.vehicleInspection();
     }
 }
