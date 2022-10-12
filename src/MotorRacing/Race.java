@@ -45,8 +45,8 @@ public class Race {
         bus2.BusesInfo();
 
 //        bus1.vehicleInspection();
-        catchInspections(car3);
-        catchInspections(bus2);
+        catchInspections(car3, bus1);
+
 
     }
 
@@ -57,6 +57,7 @@ public class Race {
                 transport.vehicleInspection();
             }
         } catch (NoSuchMethodException e){
+            System.out.println(e.getMessage());
         }
     }
 }
