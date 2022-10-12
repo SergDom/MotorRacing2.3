@@ -44,7 +44,7 @@ public abstract class Transport {
 
     public abstract void finish();
 
-    public abstract boolean vehicleInspection () throws NoSuchMethodException;
+    public abstract void vehicleInspection () throws NoSuchMethodException;
 
     @Override
     public String toString() {

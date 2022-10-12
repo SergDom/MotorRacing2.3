@@ -10,15 +10,15 @@ public class Race {
 
 
         Trucks truck1 = new Trucks("KAMAZ", "4326-9", 17, "с полной массой до 3,5 тонн");
-        Trucks truck2 = new Trucks("Tatra", "Phoenix", 12.5,"");
-        Trucks truck3 = new Trucks("Renault", "Phoenix", 14.5,"с полной массой свыше 3,5 до 12 тонн");
+        Trucks truck2 = new Trucks("Tatra", "Phoenix", 12.5, "");
+        Trucks truck3 = new Trucks("Renault", "Phoenix", 14.5, "с полной массой свыше 3,5 до 12 тонн");
         Trucks truck4 = new Trucks("Iveco", "Valtr Racing", 13.8, "с полной массой свыше 12 тонн");
 
 
         Buses bus1 = new Buses("AEC", " Routemaster", 9.6, "до 10 мест");
-        Buses bus2 = new Buses("KAMAZ", "6282", 0,"40-50 мест");
-        Buses bus3 = new Buses("Göppel", "Extra Grand", 9.3,"до 60-80 мест");
-        Buses bus4 = new Buses("MAZ", "215", 8.2,"100-120 мест");
+        Buses bus2 = new Buses("KAMAZ", "6282", 0, "40-50 мест");
+        Buses bus3 = new Buses("Göppel", "Extra Grand", 9.3, "до 60-80 мест");
+        Buses bus4 = new Buses("MAZ", "215", 8.2, "100-120 мест");
 
         DriverB Alex = new DriverB("Alex", 'B', 10);
         DriverC Vasiliy = new DriverC("Vasiliy", 'C', 2);
@@ -45,6 +45,18 @@ public class Race {
         bus2.BusesInfo();
 
 //        bus1.vehicleInspection();
-car1.vehicleInspection();
+        catchInspections(car3);
+        catchInspections(bus2);
+
+    }
+
+    public static void catchInspections(Transport... transports) {
+        try {
+            for (Transport transport : transports) {
+                System.out.print(transport.getModel() + " ");
+                transport.vehicleInspection();
+            }
+        } catch (NoSuchMethodException e){
+        }
     }
 }

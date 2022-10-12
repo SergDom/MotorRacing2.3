@@ -1,7 +1,5 @@
 package MotorRacing;
 
-import java.lang.annotation.IncompleteAnnotationException;
-
 public class Buses extends Transport implements Competing {
 
     enum SeatCapacity {
@@ -80,7 +78,7 @@ public class Buses extends Transport implements Competing {
     }
 
     @Override
-    public boolean vehicleInspection() throws NoSuchMethodException {
+    public void vehicleInspection() throws NoSuchMethodException {
         throw new NoSuchMethodException("Автобус " + getBrand() + " " + getModel() + " в диагностике не требуется");
     }
 
