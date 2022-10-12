@@ -91,7 +91,7 @@ public class MotorCars extends Transport implements Competing {
 
     @Override
     public void vehicleInspection() {
-        System.out.println("Машина проходит диагностику");;
+        System.out.println("Машина проходит диагностику");
     }
 
 

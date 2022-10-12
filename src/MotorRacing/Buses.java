@@ -79,7 +79,8 @@ public class Buses extends Transport implements Competing {
 
     @Override
     public void vehicleInspection() throws NoSuchMethodException {
-        throw new NoSuchMethodException("Автобус " + getBrand() + " " + getModel() + " в диагностике не требуется");
+        throw new NoSuchMethodException("Автобус в диагностике не требуется");
+
     }
 
     @Override

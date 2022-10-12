@@ -32,10 +32,17 @@ public class Data {
 
 
     public static void main(String[] args) {
-
-        loginInfo("Sergey", "12345qwerty", "12345qwerty%");
-
+        boolean passChecking = loginInfo("Sergey", "12345qwerty;", "12345qwerty");
+        if (passChecking) {
+            System.out.println("Данные введены правильно");
+        } else {
+            System.out.println("Данные введены не корректно");
+        }
     }
 }
+
+
+
+
 
 
