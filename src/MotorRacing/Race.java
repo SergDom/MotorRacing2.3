@@ -1,5 +1,7 @@
 package MotorRacing;
 
+import java.util.ArrayList;
+
 public class Race {
     public static void main(String[] args) throws NoSuchMethodException {
 
@@ -46,7 +48,6 @@ public class Race {
 
 //        bus1.vehicleInspection();
         catchInspections(car3, truck3, bus1);
-
 
     }
 

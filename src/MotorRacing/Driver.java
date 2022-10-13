@@ -21,14 +21,14 @@ abstract public class Driver <T extends Transport & Competing> {
         setExperience(experience);
     }
 
-    public void startMove(T Cars){
-        System.out.println(name + " Заводит " + Cars.getBrand() + " " + Cars.getModel());
+    public void startMove(T MotorCars){
+        System.out.println(name + " Заводит " + MotorCars.getBrand() + " " + MotorCars.getModel());
     }
-    public void finishMove(T Cars){
-        System.out.println(name + " Останавиливает " + Cars.getBrand() + " " + Cars.getModel());
+    public void finishMove(T MotorCars){
+        System.out.println(name + " Останавиливает " + MotorCars.getBrand() + " " + MotorCars.getModel());
     }
-    public void fillVehicle(T Cars){
-        System.out.println(name + " Заправляет " + Cars.getBrand() + " " + Cars.getModel());
+    public void fillVehicle(T MotorCars){
+        System.out.println(name + " Заправляет " + MotorCars.getBrand() + " " + MotorCars.getModel());
     }
     public Character getTypeOfLicence() {
 
@@ -56,8 +56,8 @@ abstract public class Driver <T extends Transport & Competing> {
     }
 
 
-    public void DriverInfo (T Cars) {
-        System.out.println("Водитель " + name + " управляет " + Cars.getBrand() + " " + Cars.getModel() + " и будет участвовать в заезде");
+    public void DriverInfo (T MotorCars) {
+        System.out.println("Водитель " + name + " управляет " + MotorCars.getBrand() + " " + MotorCars.getModel() + " и будет участвовать в заезде");
     }
         @Override
     public String toString() {
