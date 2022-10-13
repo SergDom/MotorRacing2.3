@@ -68,6 +68,11 @@ public class Trucks extends Transport implements Competing {
     }
 
     @Override
+    public void vehicleInspection() {
+        System.out.println("Грузовик проходит диагностику");
+    }
+
+    @Override
     public String toString() {
         return "Грузовик: " + super.toString();
     }
