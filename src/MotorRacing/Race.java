@@ -26,6 +26,8 @@ public class Race {
         DriverC Vasiliy = new DriverC("Vasiliy", 'C', 2);
         DriverD Ivan = new DriverD("Ivan", 'D', 7);
 
+        Sponsor one = new Sponsor("Рога и копыта", 2500.00);
+
 
         System.out.println(Alex);
         Alex.DriverInfo(car1);
@@ -48,7 +50,7 @@ public class Race {
 
 //        bus1.vehicleInspection();
         catchInspections(car3, truck3, bus1);
-
+        one.sponsorCars(car1);
     }
 
     public static void catchInspections(Transport... transports) {
@@ -57,7 +59,7 @@ public class Race {
                 System.out.print(transport.getModel() + " ");
                 transport.vehicleInspection();
             }
-        } catch (NoSuchMethodException e){
+        } catch (NoSuchMethodException e) {
             System.out.println(e.getMessage());
         }
     }

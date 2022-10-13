@@ -1,7 +1,7 @@
 package MotorRacing;
 
-public class Sponsor {
-    private String name;
+public class Sponsor <T extends Transport > {
+    private final String name;
     Double sum;
 
 
@@ -22,5 +22,7 @@ public class Sponsor {
         }
     }
 
-    public
+    public void sponsorCars (T MotorCars) {
+        System.out.println("Спонсор " + name + " выделяет на заезд " +getSum() + " для автомобиля " + MotorCars.getBrand() + " " + MotorCars.getModel());
+    }
 }
