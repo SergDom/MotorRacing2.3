@@ -29,7 +29,9 @@ public class Supermarket {
 
         System.out.println("Первая очередь" + queue1);
         System.out.println("Вторая очередь" + queue2);
-
+        addCustomer("Иван",queue1,queue2);
+        System.out.println("Первая очередь" + queue1);
+        System.out.println("Вторая очередь" + queue2);
     }
 
     private static void fillQueue(Queue<String> queue) {
@@ -38,31 +40,18 @@ public class Supermarket {
             queue.offer(customers.get(fillObject.nextInt(customers.size())));
         }
     }
-//
-//    private void addCustomer(String s) {
-//        if (queue1.size() < queue2.size()) {
-//            queue1.add(s);
-//        } else {
-//            queue2.add(s);
-//        }
-//        if (!queue1.isEmpty() || !queue2.isEmpty()){
-//            throw new IndexOutOfBoundsException("Зовите Галю !!!!");
-//        }
-//
-//    }
 
-//    private void delCustomer(Queue<String> queue, int n) {
-//            queue.poll();
-//            System.out.println("Удалено из очереди " + n);
-//        }
+    private static void addCustomer(String name, Queue<String> queue1, Queue<String> queue2) {
+        if (queue1.size() < queue2.size() && queue2.size()!=fillObject.nextInt(6)) {
+            queue1.add(name);
+        } else if (queue2.size() < queue1.size() && queue1.size()!=fillObject.nextInt(6)) {
+            queue2.add(name);
+        }
+        else {
+            System.out.println("Зовите Галю !!!!");
+        }
+    }
 
-
-//
-//        supermarket.fillQueue();
-
-
-//        supermarket.addCustomer("Fedor");
-//        supermarket.fillQueue();
 
 }
 
