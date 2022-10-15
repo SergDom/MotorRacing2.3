@@ -105,6 +105,11 @@ public class MotorCars extends Transport implements Competing {
         System.out.println("Машина проходит диагностику");
     }
 
+    @Override
+    public void repairCar() {
+        System.out.println("Машина " + getModel() + " " + getBrand() + " отремонтрирована!");
+    }
+
 
     public void CarInfo() {
         if (bodyType == null) {

@@ -22,7 +22,15 @@ public class Sponsor  {
         }
     }
 
+
+
     public void sponsorCars () {
         System.out.println("Спонсор " + name + " выделяет на заезд " +getSum());
+    }
+
+
+    @Override
+    public String toString() {
+        return name + " сумма на заезад " + sum;
     }
 }

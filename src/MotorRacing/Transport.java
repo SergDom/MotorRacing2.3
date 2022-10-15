@@ -1,6 +1,7 @@
 package MotorRacing;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class Transport {
@@ -8,7 +9,9 @@ public abstract class Transport {
     final private String brand;
     final private String model;
     final private double engine;
-    private List<Driver<?>> drivers = new ArrayList<>();
+    private final List<Driver<?>> drivers = new ArrayList<>();
+    private final List<Mechanics<?>> mechanics = new ArrayList<>();
+    private final List<Sponsor> sponsors = new ArrayList<>();
 
     public Transport(String brand, String model, double engine) {
         if (brand == null || brand.isEmpty()) {
@@ -44,8 +47,27 @@ public abstract class Transport {
         return engine;
     }
 
-    public void addDrivers(Driver<?> driver){
-        drivers.add(driver);
+    public void addDrivers(Driver<?>...drivers){
+        this.drivers.addAll(Arrays.asList(drivers));
+    }
+
+    public void addMechanics(Mechanics<?>...mechanics){
+        this.mechanics.addAll(Arrays.asList(mechanics));
+    }
+    public void addSponsor(Sponsor...sponsors){
+        this.sponsors.addAll(Arrays.asList(sponsors));
+    }
+
+    public List<Driver<?>> getDrivers() {
+        return drivers;
+    }
+
+    public List<Mechanics<?>> getMechanics() {
+        return mechanics;
+    }
+
+    public List<Sponsor> getSponsors() {
+        return sponsors;
     }
 
     public abstract void start();
@@ -53,6 +75,8 @@ public abstract class Transport {
     public abstract void finish();
 
     public abstract void vehicleInspection () throws NoSuchMethodException;
+
+    public abstract void  repairCar ();
 
     @Override
     public String toString() {
