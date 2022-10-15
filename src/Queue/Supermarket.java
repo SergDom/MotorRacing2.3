@@ -1,6 +1,5 @@
 package Queue;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Random;
@@ -42,9 +41,9 @@ public class Supermarket {
     }
 
     private static void addCustomer(String name, Queue<String> queue1, Queue<String> queue2) {
-        if (queue1.size() < queue2.size() && queue2.size()!=fillObject.nextInt(6)) {
+        if (queue1.size() < queue2.size() && queue1.size()!=fillObject.nextInt(6)) {
             queue1.add(name);
-        } else if (queue2.size() < queue1.size() && queue1.size()!=fillObject.nextInt(6)) {
+        } else if (queue2.size() < queue1.size() && queue2.size()!=fillObject.nextInt(6)) {
             queue2.add(name);
         }
         else {
