@@ -1,10 +1,14 @@
 package MotorRacing;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport {
 
     final private String brand;
     final private String model;
     final private double engine;
+    private List<Driver<?>> drivers = new ArrayList<>();
 
     public Transport(String brand, String model, double engine) {
         if (brand == null || brand.isEmpty()) {
@@ -38,6 +42,10 @@ public abstract class Transport {
     public double getEngine() {
 
         return engine;
+    }
+
+    public void addDrivers(Driver<?> driver){
+        drivers.add(driver);
     }
 
     public abstract void start();
