@@ -46,8 +46,6 @@ public class Race {
         bus2.addSponsor(Rosneft);
 
 
-        Sponsor one = new Sponsor("Рога и копыта", 2500);
-
         List<Transport> transports = List.of(
                 car1, car2, car3, car4,
                 truck1, truck2, truck3, truck4,
@@ -72,6 +70,12 @@ public class Race {
 
         bus1.BusesInfo();
         bus2.BusesInfo();
+
+        ServiceStation serviceStation = new ServiceStation();
+        serviceStation.addCar(car4);
+        serviceStation.addTruck(truck4);
+        serviceStation.service();
+        serviceStation.service();
 
 //        bus1.vehicleInspection();
         catchInspections(car3, truck3, bus1);

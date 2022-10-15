@@ -10,8 +10,6 @@ public class chess {
         example();
 
     }
-//        List<List<String>> biDemArrList = new ArrayList<>();
-//        int ourNumber = biDemArrList.get(0).get(1);
 
         private  static  void example() {
             List<List<String>> biDemArrList = new ArrayList<>();
