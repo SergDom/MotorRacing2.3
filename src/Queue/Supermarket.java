@@ -1,9 +1,10 @@
 package Queue;
 
+import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Queue;
 import java.util.Random;
-import java.util.concurrent.LinkedBlockingQueue;
+
 
 public class Supermarket {
     private static final List<String> customers = List.of(
@@ -15,20 +16,20 @@ public class Supermarket {
             "Тимофей Новиков",
             "Анастасия Глебова",
             "Егор Филимонов",
-            " Сергей Медведев",
+            "Сергей Медведев",
             "Ева Орлова");
 
     private static final Random fillObject = new Random();
 
     public static void main(String[] args) {
-        Queue<String> queue1 = new LinkedBlockingQueue<>(5);
-        Queue<String> queue2 = new LinkedBlockingQueue<>(5);
+        Queue<String> queue1 = new ArrayDeque<>(5);
+        Queue<String> queue2 = new ArrayDeque<>(5);
         fillQueue(queue1);
         fillQueue(queue2);
 
         System.out.println("Первая очередь" + queue1);
         System.out.println("Вторая очередь" + queue2);
-        addCustomer("Иван",queue1,queue2);
+        addCustomer("Иван Иванович !!!!",queue1,queue2);
         System.out.println("Первая очередь" + queue1);
         System.out.println("Вторая очередь" + queue2);
     }

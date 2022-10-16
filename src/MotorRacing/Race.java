@@ -72,8 +72,8 @@ public class Race {
         bus2.BusesInfo();
 
         ServiceStation serviceStation = new ServiceStation();
-        serviceStation.addCar(car4);
-        serviceStation.addTruck(truck4);
+        serviceStation.addVehicle(car4);
+        serviceStation.addVehicle(truck4);
         serviceStation.service();
         serviceStation.service();
 

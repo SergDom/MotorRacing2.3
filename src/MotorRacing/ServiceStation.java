@@ -8,16 +8,11 @@ public class ServiceStation {
 
     private final Queue<Transport> vehicle = new ArrayDeque();
 
-    private void addVehicle(Transport transport) {
-        vehicle.offer(transport);
-    }
-
-    public void addCar(MotorCars motorCars) {
-        vehicle.offer(motorCars);
-    }
-
-    public void addTruck(Trucks trucks) {
-        vehicle.offer(trucks);
+    public void addVehicle(Transport transport) {
+        if (transport instanceof Buses){
+            System.out.println("Автобусы в дагностике не нуждаются!");
+        }
+        vehicle.add(transport);
     }
 
     public void service() {
