@@ -1,5 +1,7 @@
 package MotorRacing;
 
+import java.util.ArrayList;
+
 public class MotorCars extends Transport implements Competing {
 
 
@@ -28,10 +30,17 @@ public class MotorCars extends Transport implements Competing {
 
     private BodyType bodyType;
 
+    private ArrayList<MotorCars> cars;
+
+    public ArrayList<MotorCars> getCars() {
+        return cars;
+    }
 
     public MotorCars(String brand, String model, double engine, String bodyType) {
         super(brand, model, engine);
         setBodyType(bodyType);
+        cars = new ArrayList<>();
+
 
     }
 
@@ -39,6 +48,7 @@ public class MotorCars extends Transport implements Competing {
 
         return bodyType;
     }
+
     public void setBodyType(String bodyType) {
         if (bodyType == null || bodyType.isEmpty())
             this.bodyType = null;
@@ -78,6 +88,7 @@ public class MotorCars extends Transport implements Competing {
     }
 
 
+
     @Override
     public void start() {
         System.out.println("Вставить ключ в замок зажигания и завести двигатель");
@@ -94,12 +105,17 @@ public class MotorCars extends Transport implements Competing {
         System.out.println("Машина проходит диагностику");
     }
 
+    @Override
+    public void repairCar() {
+        System.out.println("Машина " + getModel() + " " + getBrand() + " отремонтрирована!");
+    }
+
 
     public void CarInfo() {
         if (bodyType == null) {
             System.out.println("Тип не указан");
         } else {
-            System.out.println( getBrand() + " " + getModel() + " - тип кузова " + bodyType.getTextType());
+            System.out.println(getBrand() + " " + getModel() + " - тип кузова " + bodyType.getTextType());
 
         }
     }
