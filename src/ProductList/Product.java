@@ -10,7 +10,7 @@ public class Product {
     double price;
     double weight;
 
-    private Set<Product> list;
+    private static Set<Product> list;
 
     public Product(String name, double price, double weight) {
         this.name = name;
@@ -51,9 +51,12 @@ public class Product {
         }
     }
 
+    public static void removeList(Product product) {
+        list.remove(product);
+    }
 
-    public Set <Product> add () {
-        return list;
+    public static void addList(Product product) {
+        list.add(product);
     }
 
     @Override
@@ -78,14 +81,21 @@ public class Product {
 
 
     public static void main(String[] args) {
-        Set <Product> product = new HashSet<>();
+        Set<Product> product = new HashSet<>();
+        Product potato = new Product("Картошка", 35.50, 1.00);
+
+        addList(potato);
+        addList(potato);
+
+        System.out.println(product);
+
+
         product.add(new Product("Картошка", 35.50, 1.00));
         product.add(new Product("Морковь", 23.15, 2.10));
         product.add(new Product("Лук", 0.75, 0.50));
         product.add(new Product("Помидор", 45.00, 1.50));
         product.add(new Product("Банан", 15.34, 1.40));
 //        product.add(new Product("Банан", 15.34, 1.40));
-
 
 
         System.out.println(product);
