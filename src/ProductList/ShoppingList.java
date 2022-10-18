@@ -13,18 +13,16 @@ public class ShoppingList {
     }
 
     public void addList(Product product) {
-        for (Product product1 : list) {
+        for (Product product1 : list)
             if (product.name.equals(product1.name))
                 throw new UnsupportedOperationException("Такой товар уже есть в листе покупок");
             list.add(product);
         }
 
 
-    }
-
-    public void printinfo() {
-        for (Product product1 : list) {
-            System.out.println(product1.getName());
+    public void printInfo() {
+        for (Product product : list) {
+            System.out.println(product.getName());
         }
     }
 }

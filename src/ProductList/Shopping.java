@@ -1,6 +1,7 @@
 package ProductList;
 
 public class Shopping {
+
     public static void main(String[] args) {
 
 
@@ -18,7 +19,10 @@ public class Shopping {
         item.addList(tomato);
         item.addList(banana);
 
-        item.printinfo();
+        item.printInfo();
+
+
+
 
 
     }

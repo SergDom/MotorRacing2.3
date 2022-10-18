@@ -11,7 +11,6 @@ public class Product {
     double weight;
 
 
-
     public Product(String name, double price, double weight) {
         this.name = name;
         setPrice(price);
@@ -36,7 +35,6 @@ public class Product {
         }
     }
 
-
     public double getWeight() {
         return weight;
     }
@@ -46,10 +44,9 @@ public class Product {
         if (weight <= 0) {
             throw new RuntimeException("Заполните карточку товара полностью");
         } else {
-            this.weight = price;
+            this.weight = weight;
         }
     }
-
 
 
     @Override
@@ -62,14 +59,12 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        if (Objects.equals(name, product.name))
-            throw new UnsupportedOperationException("Такой товар уже есть в листе покупок");
-        return false;
+        return Double.compare(product.price, price) == 0 && Double.compare(product.weight, weight) == 0 && Objects.equals(name, product.name);
     }
 
     @Override
     public String toString() {
-        return "Продукт:" + name + " цена: " + price + " вес: " + weight + " кг";
+        return "Продукт:" + name + " ,цена: " + price + " ,вес: " + weight + " кг";
     }
 
 
