@@ -1,8 +1,8 @@
 package ProductList;
 
-import java.util.HashSet;
+
 import java.util.Objects;
-import java.util.Set;
+
 
 public class Product {
 
@@ -10,13 +10,12 @@ public class Product {
     double price;
     double weight;
 
-    private static Set<Product> list;
+
 
     public Product(String name, double price, double weight) {
         this.name = name;
         setPrice(price);
         setWeight(weight);
-        list = new HashSet<>();
     }
 
 
@@ -51,13 +50,7 @@ public class Product {
         }
     }
 
-    public static void removeList(Product product) {
-        list.remove(product);
-    }
 
-    public static void addList(Product product) {
-        list.add(product);
-    }
 
     @Override
     public int hashCode() {
@@ -80,26 +73,4 @@ public class Product {
     }
 
 
-    public static void main(String[] args) {
-        Set<Product> product = new HashSet<>();
-        Product potato = new Product("Картошка", 35.50, 1.00);
-
-        addList(potato);
-        addList(potato);
-
-        System.out.println(product);
-
-
-        product.add(new Product("Картошка", 35.50, 1.00));
-        product.add(new Product("Морковь", 23.15, 2.10));
-        product.add(new Product("Лук", 0.75, 0.50));
-        product.add(new Product("Помидор", 45.00, 1.50));
-        product.add(new Product("Банан", 15.34, 1.40));
-//        product.add(new Product("Банан", 15.34, 1.40));
-
-
-        System.out.println(product);
-
-
-    }
 }
