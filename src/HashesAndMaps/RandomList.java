@@ -1,4 +1,4 @@
-package ProductList;
+package HashesAndMaps;
 
 import java.util.*;
 
