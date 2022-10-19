@@ -1,6 +1,6 @@
 package ProductList;
 
-public class Shopping {
+public class Main {
 
     public static void main(String[] args) {
 
