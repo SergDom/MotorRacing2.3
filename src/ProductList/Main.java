@@ -19,7 +19,13 @@ public class Main {
         item.addList(tomato);
         item.addList(banana);
 
-        item.printInfo();
+//        item.printInfo();
+//
+//        Recipes salad = new Recipes("Салат");
+//        salad.addRecipes();
+
+
+
 
 
 

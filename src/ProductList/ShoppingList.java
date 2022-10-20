@@ -16,8 +16,16 @@ public class ShoppingList {
         for (Product product1 : list)
             if (product.name.equals(product1.name))
                 throw new UnsupportedOperationException("Такой товар уже есть в листе покупок");
-            list.add(product);
+        list.add(product);
+    }
+
+    public double sumOfProducts() {
+        double sum = 0;
+        for (Product cost : list) {
+            sum = sum + (cost.getPrice() * cost.getWeight());
         }
+        return sum;
+    }
 
 
     public void printInfo() {
