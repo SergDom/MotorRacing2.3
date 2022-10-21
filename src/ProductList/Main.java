@@ -6,23 +6,36 @@ public class Main {
 
 
         Product potato = new Product("Картошка", 35.50, 1.00);
-        Product carrot = new Product("Морковь", 23.15, 2.10);
         Product onion = new Product("Лук", 0.75, 0.50);
-        Product tomato = new Product("Помидор", 45.00, 1.50);
-        Product banana = new Product("Банан", 15.34, 1.40);
+        Product mashrooms = new Product("Грибы", 21.40, 1.25);
 
-        ShoppingList item = new ShoppingList();
+        Product spagetti = new Product("Спагетти", 3.50, 0.45);
+        Product eggs = new Product("Яйца", 2.75, 0.50);
+        Product bacon = new Product("Бекон", 5.90, 0.30);
 
-        item.addList(potato);
-        item.addList(carrot);
-        item.addList(onion);
-        item.addList(tomato);
-        item.addList(banana);
+
+        ShoppingList list1 = new ShoppingList();
+
+        list1.addList(potato);
+        list1.addList(onion);
+        list1.addList(mashrooms);
+
+        ShoppingList list2 = new ShoppingList();
+        list2.addList(spagetti);
+        list2.addList(eggs);
+        list2.addList(bacon);
+
 
 //        item.printInfo();
 //
-//        Recipes salad = new Recipes("Салат");
-//        salad.addRecipes();
+        Recipes jareckha = new Recipes("Жареха", list1);
+        Recipes carbonara = new Recipes("Паста Карбонара", list2);
+
+        RecipesBook recipesBook = new RecipesBook();
+        recipesBook.addRecipe(jareckha);
+        recipesBook.addRecipe(carbonara);
+
+        System.out.println(recipesBook);
 
 
 

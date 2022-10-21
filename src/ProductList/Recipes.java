@@ -9,7 +9,6 @@ public class Recipes {
     private final double totalSum;
     private final ShoppingList products;
 
-    Set<Recipes> recipeslist = new HashSet<>();
 
     public Recipes(String receipeName, ShoppingList products) {
         if (receipeName == null || receipeName.isEmpty()) {
@@ -28,14 +27,14 @@ public class Recipes {
         }
     }
 
-    public void addRecipes(Recipes recipes) {
-        for (Recipes recipes1 : recipeslist) {
-            if (recipes1.equals(recipes)) {
-                throw new UnsupportedOperationException("Такой трецепт уже есть" + getReceipeName());
-            }
-        }
-        recipeslist.add(recipes);
-    }
+//    public void addRecipes(Recipes recipes) {
+//        for (Recipes recipes1 : recipeslist) {
+//            if (recipes1.equals(recipes)) {
+//                throw new UnsupportedOperationException("Такой трецепт уже есть" + getReceipeName());
+//            }
+//        }
+//        recipeslist.add(recipes);
+//    }
 
 
     public String getReceipeName() {
@@ -65,7 +64,9 @@ public class Recipes {
 
     @Override
     public String toString() {
-        return "Название рецепта: " + receipeName;
-//        + '\n' +  " стоимость " + totalSum + " " + products;
+        return "Название рецепта: " + receipeName
+        +  " стоимость " + totalSum + " продукты " + products + '\n' ;
     }
+
+
 }

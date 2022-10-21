@@ -33,5 +33,10 @@ public class ShoppingList {
             System.out.println(product.getName());
         }
     }
+
+    @Override
+    public String toString() {
+        return "Список продуктов: " + list;
+    }
 }
 

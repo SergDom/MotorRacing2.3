@@ -64,7 +64,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Продукт:" + name + " ,цена: " + price + " ,вес: " + weight + " кг";
+        return "Продукт: " + name + " , цена: " + price + " , вес: " + weight + " кг";
     }
 
 
