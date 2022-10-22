@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class ShoppingList {
 
-    Set<Product> list = new HashSet<>();
+    private Set<Product> list = new HashSet<>();
 
 
     public void removeList(Product product) {
@@ -13,9 +13,9 @@ public class ShoppingList {
     }
 
     public void addList(Product product) {
-        for (Product product1 : list)
-            if (product.name.equals(product1.name))
-                throw new UnsupportedOperationException("Такой товар уже есть в листе покупок");
+        for (Product product1 : list) {
+            if (product.getName().equals(product1.getName()))
+                throw new IllegalArgumentException ("Такой товар уже есть в листе покупок");}
         list.add(product);
     }
 

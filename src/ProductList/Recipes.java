@@ -12,7 +12,7 @@ public class Recipes {
 
     public Recipes(String receipeName, ShoppingList products) {
         if (receipeName == null || receipeName.isEmpty()) {
-            throw new NullPointerException("Укажите название рецепта");
+            throw new IllegalArgumentException("Укажите название рецепта");
         } else {
             this.receipeName = receipeName;
         }
@@ -20,21 +20,13 @@ public class Recipes {
         totalSum = products.sumOfProducts();
 
         if (products == null) {
-            throw new NullPointerException("Нет рецептов !!!!");
+            throw new IllegalArgumentException("Нет рецептов !!!!");
         } else {
 
             this.products = products;
         }
     }
 
-//    public void addRecipes(Recipes recipes) {
-//        for (Recipes recipes1 : recipeslist) {
-//            if (recipes1.equals(recipes)) {
-//                throw new UnsupportedOperationException("Такой трецепт уже есть" + getReceipeName());
-//            }
-//        }
-//        recipeslist.add(recipes);
-//    }
 
 
     public String getReceipeName() {

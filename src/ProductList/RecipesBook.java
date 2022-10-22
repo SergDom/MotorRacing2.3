@@ -6,15 +6,15 @@ import java.util.Set;
 
 public class RecipesBook {
 
-     Set<Recipes> recipesBook;
+    private Set<Recipes> recipesBook;
 
     public RecipesBook() {
         recipesBook = new HashSet<>();
     }
 
 
-    public void addRecipe (Recipes recipes) {
-        if (recipesBook.contains(recipesBook)){
+    public void addRecipe(Recipes recipes) {
+        if (recipesBook.contains(recipesBook)) {
             throw new RuntimeException("Такой рецепт уже имеется");
         } else {
             recipesBook.add(recipes);

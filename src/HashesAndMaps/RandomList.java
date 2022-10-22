@@ -7,27 +7,30 @@ public class RandomList {
 
     public static void main(String[] args) {
 
-        ArrayList<Integer> randomlist = new ArrayList<>(20);
+        Set<Integer> randomlist = new HashSet<>(20);
 
 
         fillArray(randomlist);
+        System.out.println(randomlist);
     }
 
-    private static void fillArray(ArrayList<Integer> randomlist) {
+    private static void fillArray(Set<Integer> randomlist) {
 
         for (int i = 0; i < 20; i++) {
-            randomlist.add(i, (int) (Math.random()*1000));
+            double random = Math.random() * 1000;
+            randomlist.add((int) random);
         }
-        for (int i = 0; i < randomlist.size(); i++) {
-            if (randomlist.get(i) % 2 == 0) {
-                System.out.println(randomlist.get(i));
-            } else {
-                randomlist.remove(i);
+        Iterator<Integer> iterator = randomlist.iterator();
+        while (iterator.hasNext()) {
+            Integer element = iterator.next();
+            if (element % 2 == 1) {
+                iterator.remove();
+
             }
         }
     }
-
 }
+
 
 
 

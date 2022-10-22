@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Product {
 
-    final String name;
+    private final String name;
     double price;
     double weight;
 
