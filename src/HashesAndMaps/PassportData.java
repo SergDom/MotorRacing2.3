@@ -1,13 +1,23 @@
 package HashesAndMaps;
 
+import java.util.Objects;
+
 public class PassportData {
+    private final Integer passportID;
+    private  String name;
+    private  String midname;
+    private  String surname;
+    private  int birthdate;
 
-    private final String name;
-    private final String midname;
-    private final String surname;
-    private final int birthdate;
 
-    public PassportData(String name, String midname, String surname, int birthdate) {
+    public PassportData(Integer passportID, String name, String midname, String surname, int birthdate) {
+
+        if (passportID == null || passportID < 0) {
+        throw new IllegalArgumentException ("Не указан номер паспорта");
+    } else {
+        this.passportID = passportID;
+    }
+
         this.name = name;
 
         if (midname.isEmpty()) {
@@ -15,10 +25,9 @@ public class PassportData {
         } else {
             this.midname = midname;
         }
-
-
         this.surname = surname;
         this.birthdate = birthdate;
+
     }
 
 
@@ -40,11 +49,44 @@ public class PassportData {
         return birthdate;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMidname(String midname) {
+        this.midname = midname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setBirthdate(int birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public Integer getPassportID() {
+        return passportID;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PassportData that = (PassportData) o;
+        return birthdate == that.birthdate && Objects.equals(passportID, that.passportID) && Objects.equals(name, that.name) && Objects.equals(midname, that.midname) && Objects.equals(surname, that.surname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(passportID);
+    }
 
     @Override
     public String toString() {
-        return "Имя: " + name + " Отчество(если есть): " + midname +
+        return "Номер паспорта: " + passportID + " Имя: " + name + " Отчество(если есть): " + midname +
                 " Фамилия: " + surname +
-                " Год рождения: " + birthdate;
+                " Год рождения: " + birthdate + "\n";
     }
 }
