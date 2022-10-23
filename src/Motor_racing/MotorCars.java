@@ -1,4 +1,4 @@
-package MotorRacing;
+package Motor_racing;
 
 import java.util.ArrayList;
 

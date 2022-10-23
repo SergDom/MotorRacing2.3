@@ -1,4 +1,4 @@
-package ProductList;
+package Product_list;
 
 
 import java.util.Objects;
@@ -7,8 +7,8 @@ import java.util.Objects;
 public class Product {
 
     private final String name;
-    double price;
-    double weight;
+    private double price;
+    private double weight;
 
 
     public Product(String name, double price, double weight) {

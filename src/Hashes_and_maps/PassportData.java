@@ -1,4 +1,4 @@
-package HashesAndMaps;
+package Hashes_and_maps;
 
 import java.util.Objects;
 

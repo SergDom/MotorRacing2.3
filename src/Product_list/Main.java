@@ -1,4 +1,4 @@
-package ProductList;
+package Product_list;
 
 public class Main {
 
@@ -7,9 +7,9 @@ public class Main {
 
         Product potato = new Product("Картошка", 35.50, 1.00);
         Product onion = new Product("Лук", 0.75, 0.50);
-        Product mashrooms = new Product("Грибы", 21.40, 1.25);
+        Product mushrooms = new Product("Грибы", 21.40, 1.25);
 
-        Product spagetti = new Product("Спагетти", 3.50, 0.45);
+        Product spaghetti = new Product("Спагетти", 3.50, 0.45);
         Product eggs = new Product("Яйца", 2.75, 0.50);
         Product bacon = new Product("Бекон", 5.90, 0.30);
 
@@ -18,10 +18,10 @@ public class Main {
 
         list1.addList(potato);
         list1.addList(onion);
-        list1.addList(mashrooms);
+        list1.addList(mushrooms);
 
         ShoppingList list2 = new ShoppingList();
-        list2.addList(spagetti);
+        list2.addList(spaghetti);
         list2.addList(eggs);
         list2.addList(bacon);
 

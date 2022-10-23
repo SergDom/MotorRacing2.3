@@ -1,4 +1,4 @@
-package ProductList;
+package Product_list;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class RecipesBook {
 
-    private Set<Recipes> recipesBook;
+    private final Set<Recipes> recipesBook;
 
     public RecipesBook() {
         recipesBook = new HashSet<>();

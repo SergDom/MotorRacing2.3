@@ -1,4 +1,4 @@
-package ProductList;
+package Product_list;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package LoginData;
+package Login_data;
 
 public class WrongPasswordException extends Exception{
     public WrongPasswordException() {

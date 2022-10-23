@@ -1,4 +1,4 @@
-package MotorRacing;
+package Motor_racing;
 
 import java.util.*;
 
@@ -75,6 +75,20 @@ public abstract class Transport {
     public abstract void vehicleInspection () throws NoSuchMethodException;
 
     public abstract void  repairCar ();
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport transport = (Transport) o;
+        return Double.compare(transport.engine, engine) == 0 && Objects.equals(brand, transport.brand) && Objects.equals(model, transport.model) && Objects.equals(drivers, transport.drivers) && Objects.equals(mechanics, transport.mechanics) && Objects.equals(sponsors, transport.sponsors);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, engine, drivers, mechanics, sponsors);
+    }
 
     @Override
     public String toString() {

@@ -1,20 +1,18 @@
-package ProductList;
+package Product_list;
 
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 public class Recipes {
-    private final String receipeName;
+    private final String recipeName;
     private final double totalSum;
     private final ShoppingList products;
 
 
-    public Recipes(String receipeName, ShoppingList products) {
-        if (receipeName == null || receipeName.isEmpty()) {
+    public Recipes(String recipeName, ShoppingList products) {
+        if (recipeName == null || recipeName.isEmpty()) {
             throw new IllegalArgumentException("Укажите название рецепта");
         } else {
-            this.receipeName = receipeName;
+            this.recipeName = recipeName;
         }
 
         totalSum = products.sumOfProducts();
@@ -22,15 +20,12 @@ public class Recipes {
         if (products == null) {
             throw new IllegalArgumentException("Нет рецептов !!!!");
         } else {
-
             this.products = products;
         }
     }
 
-
-
-    public String getReceipeName() {
-        return receipeName;
+    public String getRecipeName() {
+        return recipeName;
     }
 
     public double getTotalSum() {
@@ -46,17 +41,17 @@ public class Recipes {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Recipes recipes = (Recipes) o;
-        return Objects.equals(receipeName, recipes.receipeName);
+        return Objects.equals(recipeName, recipes.recipeName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(receipeName);
+        return Objects.hash(recipeName);
     }
 
     @Override
     public String toString() {
-        return "Название рецепта: " + receipeName
+        return "Название рецепта: " + recipeName
         +  " стоимость " + totalSum + " продукты " + products + '\n' ;
     }
 
