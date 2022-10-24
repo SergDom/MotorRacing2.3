@@ -7,14 +7,14 @@ public class Passport {
     private final static List<PassportData> pList = new ArrayList<>();
 
     public static void main(String[] args) {
-        PassportData Ivan = new PassportData(123456, "Ivan", "Ivanovich", "Ivanov", 1990);
-        PassportData Petr = new PassportData(234567, "Petr", "Petrovich", "Sidorov", 1999);
-        PassportData Ilia = new PassportData(234568, "Ilia", "Sergeevich", "Petrov", 1987);
-        PassportData Ilia2 = new PassportData(234567, "Ilia", "Sergeevich", "Petrov", 1987);
-        addPassportData(Ivan);
-        addPassportData(Petr);
-        addPassportData(Ilia);
-        addPassportData(Ilia2);
+        PassportData ivan = new PassportData(123456, "Ivan", "Ivanovich", "Ivanov", 1990);
+        PassportData petr = new PassportData(234567, "Petr", "Petrovich", "Sidorov", 1999);
+        PassportData ilia = new PassportData(234568, "Ilia", "Sergeevich", "Petrov", 1987);
+        PassportData ilia2 = new PassportData(234567, "Ilia", "Sergeevich", "Petrov", 1987);
+        addPassportData(ivan);
+        addPassportData(petr);
+        addPassportData(ilia);
+        addPassportData(ilia2);
 
         System.out.println(pList);
 

@@ -1,5 +1,7 @@
 package Motor_racing;
 
+import java.util.Objects;
+
 public class Mechanics<T extends Transport> {
 
     private final String name;
@@ -36,6 +38,19 @@ public class Mechanics<T extends Transport> {
 
     public void repairCar(T transport) {
         transport.repairCar();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Mechanics<?> mechanics = (Mechanics<?>) o;
+        return name.equals(mechanics.name) && surname.equals(mechanics.surname) && employer.equals(mechanics.employer);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, employer);
     }
 
     @Override

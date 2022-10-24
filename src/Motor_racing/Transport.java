@@ -7,9 +7,9 @@ public abstract class Transport {
     final private String brand;
     final private String model;
     final private double engine;
-    private final Set<Driver<?>> drivers = new HashSet<>();
-    private final Set<Mechanics<?>> mechanics = new HashSet<>();
-    private final Set<Sponsor> sponsors = new HashSet<>();
+    private  Set<Driver<?>> drivers = new HashSet<>();
+    private  Set<Mechanics<?>> mechanics = new HashSet<>();
+    private  Set<Sponsor> sponsors = new HashSet<>();
 
     public Transport(String brand, String model, double engine) {
         if (brand == null || brand.isEmpty()) {
@@ -28,6 +28,7 @@ public abstract class Transport {
         } else {
             this.engine = engine;
         }
+
     }
 
     public String getBrand() {
@@ -48,7 +49,6 @@ public abstract class Transport {
     public void addDrivers(Driver<?>...drivers){
         this.drivers.addAll(Arrays.asList(drivers));
     }
-
     public void addMechanics(Mechanics<?>...mechanics){
         this.mechanics.addAll(Arrays.asList(mechanics));
     }
@@ -76,13 +76,14 @@ public abstract class Transport {
 
     public abstract void  repairCar ();
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Transport transport = (Transport) o;
-        return Double.compare(transport.engine, engine) == 0 && Objects.equals(brand, transport.brand) && Objects.equals(model, transport.model) && Objects.equals(drivers, transport.drivers) && Objects.equals(mechanics, transport.mechanics) && Objects.equals(sponsors, transport.sponsors);
+        return Double.compare(transport.engine, engine) == 0 && brand.equals(transport.brand)
+                && model.equals(transport.model) && drivers.equals(transport.drivers)
+                && mechanics.equals(transport.mechanics) && sponsors.equals(transport.sponsors);
     }
 
     @Override
