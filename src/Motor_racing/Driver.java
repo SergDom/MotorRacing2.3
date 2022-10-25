@@ -1,4 +1,4 @@
-package MotorRacing;
+package Motor_racing;
 
 
 abstract public class Driver <T extends Transport & Competing> {

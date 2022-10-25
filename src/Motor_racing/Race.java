@@ -1,12 +1,12 @@
-package MotorRacing;
+package Motor_racing;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Race {
     public static void main(String[] args) throws NoSuchMethodException {
         Mechanics<MotorCars> Fedor = new Mechanics<MotorCars>("Fedor", "Pterovich", "FixitAll");
-        Mechanics<Transport> Nikita = new Mechanics<Transport>("Fedor", "Pterovich", "FixitAll");
+        Mechanics<Transport> Nikita = new Mechanics<Transport>("Nikita", "Ivanovich", "CrewCo");
+
 
         Sponsor MotorOil = new Sponsor("MotorOil", 200_000);
         Sponsor Rosneft = new Sponsor("Rosneft", 500_000);
@@ -95,12 +95,12 @@ public class Race {
         }
     }
 
-    public static void printTotalInfo(Transport transport){
+    public static void printTotalInfo(Transport transport) {
         System.out.println("Автомобиль " + transport.getBrand() + " " + transport.getModel());
         System.out.println("Водитель " + transport.getDrivers());
         System.out.println("Спонсор " + transport.getSponsors());
         System.out.println("Механик " + transport.getMechanics());
         System.out.println();
-        }
     }
+}
 

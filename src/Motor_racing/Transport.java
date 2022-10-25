@@ -1,17 +1,15 @@
-package MotorRacing;
+package Motor_racing;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public abstract class Transport {
 
     final private String brand;
     final private String model;
     final private double engine;
-    private final List<Driver<?>> drivers = new ArrayList<>();
-    private final List<Mechanics<?>> mechanics = new ArrayList<>();
-    private final List<Sponsor> sponsors = new ArrayList<>();
+    private  Set<Driver<?>> drivers = new HashSet<>();
+    private  Set<Mechanics<?>> mechanics = new HashSet<>();
+    private  Set<Sponsor> sponsors = new HashSet<>();
 
     public Transport(String brand, String model, double engine) {
         if (brand == null || brand.isEmpty()) {
@@ -30,6 +28,7 @@ public abstract class Transport {
         } else {
             this.engine = engine;
         }
+
     }
 
     public String getBrand() {
@@ -50,7 +49,6 @@ public abstract class Transport {
     public void addDrivers(Driver<?>...drivers){
         this.drivers.addAll(Arrays.asList(drivers));
     }
-
     public void addMechanics(Mechanics<?>...mechanics){
         this.mechanics.addAll(Arrays.asList(mechanics));
     }
@@ -58,15 +56,15 @@ public abstract class Transport {
         this.sponsors.addAll(Arrays.asList(sponsors));
     }
 
-    public List<Driver<?>> getDrivers() {
+    public Set<Driver<?>> getDrivers() {
         return drivers;
     }
 
-    public List<Mechanics<?>> getMechanics() {
+    public Set<Mechanics<?>> getMechanics() {
         return mechanics;
     }
 
-    public List<Sponsor> getSponsors() {
+    public Set<Sponsor> getSponsors() {
         return sponsors;
     }
 
@@ -77,6 +75,21 @@ public abstract class Transport {
     public abstract void vehicleInspection () throws NoSuchMethodException;
 
     public abstract void  repairCar ();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport transport = (Transport) o;
+        return Double.compare(transport.engine, engine) == 0 && brand.equals(transport.brand)
+                && model.equals(transport.model) && drivers.equals(transport.drivers)
+                && mechanics.equals(transport.mechanics) && sponsors.equals(transport.sponsors);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, engine, drivers, mechanics, sponsors);
+    }
 
     @Override
     public String toString() {

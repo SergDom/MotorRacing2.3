@@ -1,4 +1,4 @@
-package MotorRacing;
+package Motor_racing;
 
 public class Sponsor  {
     private final String name;

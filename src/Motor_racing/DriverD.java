@@ -1,4 +1,4 @@
-package MotorRacing;
+package Motor_racing;
 
 public class DriverD extends Driver<Buses> {
 
