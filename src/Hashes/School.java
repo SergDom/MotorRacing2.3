@@ -1,4 +1,4 @@
-package Hashes_and_maps;
+package Hashes;
 
 import java.util.HashSet;
 import java.util.Random;
