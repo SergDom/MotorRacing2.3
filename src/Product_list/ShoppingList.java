@@ -1,37 +1,46 @@
 package Product_list;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class ShoppingList {
 
-    private Set<Product> list = new HashSet<>();
+    private Map<Product, Double> list = new HashMap<>();
 
 
     public void removeList(Product product) {
+
         list.remove(product);
     }
 
     public void addList(Product product) {
-        for (Product product1 : list) {
-            if (product.getName().equals(product1.getName()))
-                throw new IllegalArgumentException ("Такой товар уже есть в листе покупок");}
-        list.add(product);
+        if (list.containsValue(product)) {
+            throw new IllegalArgumentException("Такой товар уже есть в листе покупок" + product.getName());
+        } else {
+
+            list.put(product, product.getWeight());
+        }
     }
 
     public double sumOfProducts() {
         double sum = 0;
-        for (Product cost : list) {
-            sum = sum + (cost.getPrice() * cost.getWeight());
+        for (Map.Entry<Product, Double> listEntry : list.entrySet()) {
+            sum = sum + (listEntry.getKey().getPrice() * listEntry.getValue());
         }
         return sum;
     }
 
 
-    public void printInfo() {
-        for (Product product : list) {
-            System.out.println(product.getName());
-        }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ShoppingList that = (ShoppingList) o;
+        return list.equals(that.list);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(list);
     }
 
     @Override
