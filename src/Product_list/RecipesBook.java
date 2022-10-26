@@ -14,13 +14,12 @@ public class RecipesBook {
 
 
     public void addRecipe(Recipes recipes) {
-        if (recipesBook.contains(recipesBook)) {
+        if (recipesBook.contains(recipes)) {
             throw new RuntimeException("Такой рецепт уже имеется");
         } else {
             recipesBook.add(recipes);
         }
     }
-
 
     @Override
     public boolean equals(Object o) {

@@ -12,7 +12,10 @@ public class Product {
 
 
     public Product(String name, double price, double weight) {
-        this.name = name;
+        if ( name == null || name.isBlank()) {
+            throw new NullPointerException(" Заполните имя продукта ");
+        } else {
+        this.name = name;}
         setPrice(price);
         setWeight(weight);
     }
@@ -21,7 +24,6 @@ public class Product {
     public String getName() {
         return name;
     }
-
 
     public double getPrice() {
         return price;
@@ -42,12 +44,11 @@ public class Product {
     public void setWeight(double weight) {
 
         if (weight <= 0) {
-            throw new RuntimeException("Заполните карточку товара полностью");
+            this.weight = 1.0;
         } else {
             this.weight = weight;
         }
     }
-
 
     @Override
     public int hashCode() {
@@ -64,7 +65,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Продукт: " + name + " , цена: " + price + " , вес: " + weight + " кг";
+        return "Продукт: " + name + ", цена: " + price + ", вес: ";
     }
 
 
