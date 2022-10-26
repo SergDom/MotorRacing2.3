@@ -13,8 +13,8 @@ public class ShoppingList {
     }
 
     public void addList(Product product) {
-        if (list.containsValue(product)) {
-            throw new IllegalArgumentException("Такой товар уже есть в листе покупок" + product.getName());
+        if (list.containsKey(product)) {
+            throw new IllegalArgumentException("Такой товар уже есть в листе покупок " + product.getName());
         } else {
 
             list.put(product, product.getWeight());

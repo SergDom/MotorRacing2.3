@@ -10,7 +10,7 @@ public class MapPair {
     Map<String, Integer> generate = new HashMap<>();
 
     public void addToMap(String string, Integer digit) {
-        if (!generate.containsKey(string) || !generate.containsValue(digit)) {
+        if (!generate.containsKey(string) && !generate.containsValue(digit)) {
             generate.put(string, digit);
         } else {
             throw new IllegalArgumentException("Значение существует");
